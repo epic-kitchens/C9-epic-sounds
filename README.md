@@ -37,5 +37,5 @@ format doesn't necessarily have to be in a `.pkl`.
 ## Evaluating model results
 
 We provide an evaluation script to compute the metrics we report in the paper on
-the validation set. You will also need to clone the [annotations repo](https://github.com/epic-kitchens/epic-sounds)
+the validation set. You will also need to clone the [annotations repo](https://github.com/epic-kitchens/epic-sounds-annotations)
 
