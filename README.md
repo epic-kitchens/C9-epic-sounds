@@ -6,6 +6,8 @@ The labelled train/val annoations, along with the recognition test set timestamp
 
 This repo is a modified version of the existing [Action Recognition Challenge](https://github.com/epic-kitchens/C1-Action-Recognition)
 
+**NOTE:** For this version of the challenge (version "0.1"), the class "background" (class_id=13) has been redacted from the test set.
+
 ## Result data formats
 
 We support two formats for model results.
