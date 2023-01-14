@@ -2,7 +2,7 @@
 
 ## Challenge
 To participate and submit to this challenge, register at the [EPIC-SOUNDS Audio-Based Interaction Recognition Codalab Challenge](https://codalab.lisn.upsaclay.fr/competitions/9729).
-The labelled train/val annoations, along with the recognition test set timestamps are available on the [EPIC-Sounds annotations repo](). The [baseline models]() can also be found here.
+The labelled train/val annoations, along with the recognition test set timestamps are available on the [EPIC-Sounds annotations repo](https://github.com/epic-kitchens/epic-sounds-annotations). The [baseline models](https://github.com/epic-kitchens/epic-sounds-annotations) can also be found here.
 
 This repo is a modified version of the existing [Action Recognition Challenge](https://github.com/epic-kitchens/C1-Action-Recognition)
 
