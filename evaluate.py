@@ -51,7 +51,8 @@ def main(args):
     labels = labels["class_id"]
 
     results = load_results(args.results)
-    results["interaction_output"] = np.sum(results["interaction_output"], axis=1)
+    if results["interaction_output"].ndim == 3: # Support multi-view evaluation
+        results["interaction_output"] = np.sum(results["interaction_output"], axis=1)
     interaction_output = results["interaction_output"]
     annotation_ids = results["annotation_id"]
     scores = {
