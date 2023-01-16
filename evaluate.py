@@ -38,7 +38,7 @@ parser.add_argument(
 )
 parser.add_argument("labels", type=Path, help="Labels (pickled dataframe)")
 
-
+parser.add_argument("--redact_background", action="store_true", help="Whether to redact background labels in the evaluation")
 
 def collate(results):
     return {k: [r[k] for r in results] for k in results[0].keys()}
@@ -48,6 +48,8 @@ def main(args):
     labels: pd.DataFrame = pd.read_pickle(args.labels)
     if "annotation_id" in labels.columns:
         labels.set_index("annotation_id", inplace=True)
+    if args.redact_background:
+        redacted_ids = labels[labels["class"] == "background"].index.values
     labels = labels["class_id"]
 
     results = load_results(args.results)
@@ -55,6 +57,12 @@ def main(args):
         results["interaction_output"] = np.sum(results["interaction_output"], axis=1)
     interaction_output = results["interaction_output"]
     annotation_ids = results["annotation_id"]
+
+    if args.redact_background:
+        keep_indices = [i for i, a_id in enumerate(annotation_ids) if not a_id in redacted_ids]
+        interaction_output = results["interaction_output"][keep_indices]
+        annotation_ids = results["annotation_id"][keep_indices]
+
     scores = {
         "interaction": interaction_output,
     }
