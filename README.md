@@ -5,7 +5,7 @@
 To participate and submit to this challenge, register at the [EPIC-SOUNDS Audio-Based Interaction Recognition Codalab Challenge](https://codalab.lisn.upsaclay.fr/competitions/9729).
 The labelled train/val annoations, along with the recognition test set timestamps are available on the [EPIC-Sounds annotations repo](https://github.com/epic-kitchens/epic-sounds-annotations). The [baseline models](https://github.com/epic-kitchens/epic-sounds-annotations/tree/main/src) can also be found here, where the inference script `src/tools/test_net.py` can be used as a template to correctly format models scores for the `create_submission.py` and `evaluate.py` scripts.
 
-This repo is a modified version of the existing [Action Recognition Challenge](https://github.com/epic-kitchens/C1-Action-Recognition)
+This repo is a modified version of the existing [Action Recognition Challenge](https://github.com/epic-kitchens/C1-Action-Recognition).
 
 **NOTE:** For this version of the challenge (version "0.1"), the class "background" (class_id=13) has been redacted from the test set. The arguement `--redact_background` is supported in `evaluate.py` to remove background labels from your validation set evaluation.
 
