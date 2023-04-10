@@ -4,7 +4,6 @@ from textwrap import dedent
 
 import pandas as pd
 import numpy as np
-import torch
 from pprint import pprint
 
 from utils.metrics import compute_metrics
